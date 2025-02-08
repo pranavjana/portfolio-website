@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import mbotImageUrl from "../assets/mbot.png?url";
 
 interface Project {
   title: string;
@@ -9,6 +10,7 @@ interface Project {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
+  isAwardWinning?: boolean;
 }
 
 interface ProjectsSectionProps {
@@ -18,76 +20,61 @@ interface ProjectsSectionProps {
 const ProjectsSection = ({
   projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Pawgress",
       description:
-        "A full-stack e-commerce solution with real-time inventory management and secure payment processing.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop&q=60",
-      technologies: ["React", "Node.js", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "HackNRoll 2025 Commendation Award - A gamified task manager with virtual pet companion.",
+      imageUrl: "/src/assets/pawgress.png",
+      technologies: ["React", "Tailwind CSS", "Vite", "SQLite"],
+      liveUrl: "https://pawgress.vercel.app",
+      githubUrl: "https://github.com/pranavjana/HacknRoll-2025",
+      isAwardWinning: true,
     },
     {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
-      technologies: ["React", "Firebase", "Material-UI"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "AWS Cloud Resume",
+      description: "Serverless portfolio website built with AWS services.",
+      imageUrl: "/src/assets/aws.png",
+      technologies: ["AWS", "Terraform", "CI/CD"],
+      liveUrl: "https://pranav-portfolio.com",
+      githubUrl: "https://github.com/pranavjana/awscloud-resume-challenge",
     },
     {
-      title: "Weather Dashboard",
-      description:
-        "A modern weather application featuring interactive maps and detailed weather forecasts.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&auto=format&fit=crop&q=60",
-      technologies: ["React", "OpenWeather API", "Leaflet"],
+      title: "mBot Maze Solver",
+      description: "ATmega328-powered autonomous robot with wall following capabilities.",
+      imageUrl: mbotImageUrl,
+      technologies: ["C++", "Arduino", "Robotics", "Sensors"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/pranavjana/cg1111a_amazing_race",
     },
   ],
 }: ProjectsSectionProps) => {
   return (
-    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900" id="projects">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto"
-      >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-            Featured Projects
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and
-            experience in building modern web applications.
+    <section id="projects" className="py-16 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Featured Projects</h2>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Here are some of my notable projects that showcase my skills and experience in software development.
           </p>
-        </div>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 justify-items-center"
         >
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <ProjectCard {...project} />
-            </motion.div>
+            <ProjectCard key={index} {...project} />
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

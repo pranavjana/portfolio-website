@@ -57,6 +57,13 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundImage: {
+        'dot-black': 'radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px)',
+        'dot-white': 'radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'dot': '24px 24px'
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

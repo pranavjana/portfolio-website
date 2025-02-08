@@ -24,7 +24,7 @@ const ContactSection = ({
   },
 }: ContactSectionProps) => {
   return (
-    <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 px-4 bg-gray-50 dark:bg-black">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ const ContactSection = ({
                       href={socialLinks.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition-colors"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-black/40 hover:bg-primary hover:text-white transition-colors"
                     >
                       <Github className="w-6 h-6" />
                     </motion.a>
@@ -95,7 +95,7 @@ const ContactSection = ({
                       href={socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition-colors"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-black/40 hover:bg-primary hover:text-white transition-colors"
                     >
                       <Linkedin className="w-6 h-6" />
                     </motion.a>
@@ -104,7 +104,7 @@ const ContactSection = ({
                       href={socialLinks.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition-colors"
+                      className="p-2 rounded-full bg-gray-100 dark:bg-black/40 hover:bg-primary hover:text-white transition-colors"
                     >
                       <Twitter className="w-6 h-6" />
                     </motion.a>

@@ -47,7 +47,7 @@ const CertificationsSection = ({
   certifications = defaultCertifications,
 }: CertificationsSectionProps) => {
   return (
-    <section className="py-20 px-4 bg-white dark:bg-gray-800">
+    <section className="py-20 px-4 bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ const CertificationsSection = ({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <Card className="h-full hover:shadow-lg transition-all duration-300 dark:bg-black border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-center mb-6">
                     <img
@@ -101,7 +101,7 @@ const CertificationsSection = ({
                     <div className="mt-4 text-center">
                       <Badge
                         variant="secondary"
-                        className="bg-gray-100 dark:bg-gray-700"
+                        className="bg-gray-100 dark:bg-black/40"
                       >
                         ID: {cert.credentialId}
                       </Badge>

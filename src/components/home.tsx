@@ -5,7 +5,6 @@ import SkillsSection from "./SkillsSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
 import CertificationsSection from "./CertificationsSection";
 
 interface HomeProps {
@@ -22,10 +21,10 @@ interface HomeProps {
 }
 
 const Home = ({
-  name = "John Doe",
+  name = "Pranav Janakiraman",
   title = "Full Stack Developer",
   description = "Passionate about creating beautiful and functional web applications. Specialized in React, TypeScript, and modern web technologies.",
-  imageUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=portfolio",
+  imageUrl = "/pranav.png",
   socialLinks = {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
@@ -45,10 +44,9 @@ const Home = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-900"
+      className="bg-white dark:bg-black"
     >
       <NavigationMenuComponent onSectionClick={handleSectionClick} />
-      <ThemeToggle />
 
       <div id="hero">
         <HeroSection
@@ -65,12 +63,12 @@ const Home = ({
         <SkillsSection />
       </div>
 
-      <div id="certifications">
-        <CertificationsSection />
-      </div>
-
       <div id="projects">
         <ProjectsSection />
+      </div>
+
+      <div id="certifications">
+        <CertificationsSection />
       </div>
 
       <div id="contact">
