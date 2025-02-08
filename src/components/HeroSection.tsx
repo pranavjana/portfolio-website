@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Twitter, MapPin, GraduationCap, Download } from "lucide-react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 // Use URL imports for the image
 import profileImageUrl from "../assets/pranav.png?url";
@@ -62,14 +63,16 @@ const HeroSection = ({
               </motion.span>
             </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-4"
-            >
-              {title}
-            </motion.h2>
+            <HeroHighlight containerClassName="justify-start">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="text-xl sm:text-2xl lg:text-3xl text-gray-900 dark:text-white mb-4"
+              >
+                <Highlight>{title}</Highlight>
+              </motion.h2>
+            </HeroHighlight>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -6,6 +6,7 @@ import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
 import { motion } from "framer-motion";
 import CertificationsSection from "./CertificationsSection";
+import Footer from "./Footer";
 
 interface HomeProps {
   name?: string;
@@ -17,7 +18,6 @@ interface HomeProps {
     linkedin?: string;
     twitter?: string;
   };
-  email?: string;
 }
 
 const Home = ({
@@ -30,7 +30,6 @@ const Home = ({
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
   },
-  email = "hello@example.com",
 }: HomeProps) => {
   const handleSectionClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -72,8 +71,10 @@ const Home = ({
       </div>
 
       <div id="contact">
-        <ContactSection email={email} socialLinks={socialLinks} />
+        <ContactSection />
       </div>
+
+      <Footer />
     </motion.div>
   );
 };

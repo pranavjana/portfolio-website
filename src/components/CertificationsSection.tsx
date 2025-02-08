@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Award, Calendar } from "lucide-react";
+import { cn } from "../lib/utils";
 
 interface Certification {
   name: string;
@@ -21,23 +22,23 @@ const defaultCertifications: Certification[] = [
     name: "AWS Certified Solutions Architect - Associate",
     issuer: "Amazon Web Services",
     date: "2024",
-    credentialId: "AWS-ASA-00000",
+    credentialId: "9caedd49-5ae9-4531-b76b-6ec64bc556fc",
     imageUrl:
       "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
   },
   {
-    name: "AWS Certified Developer - Associate",
+    name: "AWS Certified Data Engineer - Associate",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "AWS-DA-00000",
+    credentialId: "aws-DEA-00000 ",
     imageUrl:
-      "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+      "https://images.credly.com/images/e5c85d7f-4e50-431e-b5af-fa9d9b0596e7/image.png",
   },
   {
     name: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "AWS-CP-00000",
+    credentialId: "d1a348c7-6a37-4685-b732-62d011672af3",
     imageUrl:
       "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
   },
@@ -99,12 +100,14 @@ const CertificationsSection = ({
                   </div>
                   {cert.credentialId && (
                     <div className="mt-4 text-center">
-                      <Badge
-                        variant="secondary"
-                        className="bg-gray-100 dark:bg-black/40"
+                      <a
+                        href={`https://www.credly.com/badges/${cert.credentialId}/public_url`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-primary hover:underline"
                       >
-                        ID: {cert.credentialId}
-                      </Badge>
+                        Verify on Credly
+                      </a>
                     </div>
                   )}
                 </CardContent>
