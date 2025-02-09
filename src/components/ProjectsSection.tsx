@@ -24,7 +24,7 @@ const ProjectsSection = ({
         "HackNRoll 2025 Commendation Award - A gamified task manager with virtual pet companion.",
       imageUrl: "/pawgress.png",
       technologies: ["React", "Tailwind CSS", "Vite", "SQLite"],
-      liveUrl: "https://pawgress.vercel.app",
+      liveUrl: "https://d9c57d06.pawgress.pages.dev/",
       githubUrl: "https://github.com/pranavjana/HacknRoll-2025",
       isAwardWinning: true,
     },
