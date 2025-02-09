@@ -30,7 +30,7 @@ const defaultCertifications: Certification[] = [
     name: "AWS Certified Data Engineer - Associate",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "aws-DEA-00000 ",
+    credentialId: "1b8a9a9e-3db5-488a-8fef-32a5ec86515a",
     imageUrl:
       "https://images.credly.com/images/e5c85d7f-4e50-431e-b5af-fa9d9b0596e7/image.png",
   },

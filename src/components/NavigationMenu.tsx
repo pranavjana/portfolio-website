@@ -28,7 +28,7 @@ const NavigationMenuComponent = ({
   ],
 }: NavigationMenuProps) => {
   return (
-    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center items-center gap-4">
+    <div className="hidden sm:flex fixed top-4 left-0 right-0 z-50 justify-center items-center gap-4">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

@@ -61,7 +61,7 @@ const HeroSection = ({
               </motion.span>
             </motion.h1>
 
-            <HeroHighlight containerClassName="justify-start">
+            <HeroHighlight containerClassName="justify-center sm:justify-start">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -169,10 +169,10 @@ const HeroSection = ({
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex-1 flex justify-center items-center -mt-6 sm:mt-0"
+            className="flex-1 flex justify-center items-center mt-12 sm:-mt-6 lg:mt-0 order-first sm:order-last"
           >
             <CardContainer>
-              <CardBody className="relative group/card w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
+              <CardBody className="relative group/card w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-20 blur-3xl animate-pulse" />
                 <CardItem translateZ={100} className="w-full h-full">
                   <img
