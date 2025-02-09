@@ -1,7 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
-import mbotImageUrl from "../assets/mbot.png?url";
 
 interface Project {
   title: string;
@@ -23,7 +22,7 @@ const ProjectsSection = ({
       title: "Pawgress",
       description:
         "HackNRoll 2025 Commendation Award - A gamified task manager with virtual pet companion.",
-      imageUrl: "/src/assets/pawgress.png",
+      imageUrl: "/pawgress.png",
       technologies: ["React", "Tailwind CSS", "Vite", "SQLite"],
       liveUrl: "https://pawgress.vercel.app",
       githubUrl: "https://github.com/pranavjana/HacknRoll-2025",
@@ -32,7 +31,7 @@ const ProjectsSection = ({
     {
       title: "AWS Cloud Resume",
       description: "Serverless portfolio website built with AWS services.",
-      imageUrl: "/src/assets/aws.png",
+      imageUrl: "/aws.png",
       technologies: ["AWS", "Terraform", "CI/CD"],
       liveUrl: "https://pranav-portfolio.com",
       githubUrl: "https://github.com/pranavjana/awscloud-resume-challenge",
@@ -40,7 +39,7 @@ const ProjectsSection = ({
     {
       title: "mBot Maze Solver",
       description: "ATmega328-powered autonomous robot with wall following capabilities.",
-      imageUrl: mbotImageUrl,
+      imageUrl: "/mbot.png",
       technologies: ["C++", "Arduino", "Robotics", "Sensors"],
       liveUrl: "#",
       githubUrl: "https://github.com/pranavjana/cg1111a_amazing_race",
