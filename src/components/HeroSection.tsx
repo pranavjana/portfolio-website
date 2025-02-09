@@ -28,7 +28,7 @@ const HeroSection = ({
   imageUrl = profileImageUrl,
   cvUrl = "/pranav_resume.pdf",
   socialLinks = {
-    github: "https://github.com",
+    github: "https://github.com/pranavjana",
     linkedin: "https://linkedin.com/in/pranavjana",
   },
   onExploreClick = () => {},

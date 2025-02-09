@@ -26,8 +26,8 @@ const Home = ({
   description = "Passionate about creating beautiful and functional web applications. Specialized in React, TypeScript, and modern web technologies.",
   imageUrl = "/pranav.png",
   socialLinks = {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/pranavjana",
+    linkedin: "https://linkedin.com/in/pranavjana",
     twitter: "https://twitter.com",
   },
 }: HomeProps) => {
