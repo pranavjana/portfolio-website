@@ -82,9 +82,9 @@ const HeroSection = ({
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 <span>Singapore</span>
               </div>
-              <div className="flex items-center gap-2">
-                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                <span className="text-center sm:text-left">Computer Engineering @ National University of Singapore</span>
+              <div className="flex items-center gap-2 text-center sm:text-left">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+                <span>Computer Engineering @ National University of Singapore</span>
               </div>
             </motion.div>
 
