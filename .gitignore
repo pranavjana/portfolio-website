@@ -55,3 +55,6 @@ dist-ssr
 **/tempobook/storyboards/
 
 core
+
+# Track resume in public directory
+!/public/pranav_resume.pdf

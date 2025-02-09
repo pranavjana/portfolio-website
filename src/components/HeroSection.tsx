@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { ArrowDown, Github, Linkedin, Twitter, MapPin, GraduationCap, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, MapPin, GraduationCap, Download } from "lucide-react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
@@ -17,7 +17,6 @@ interface HeroSectionProps {
   socialLinks?: {
     github?: string;
     linkedin?: string;
-    twitter?: string;
   };
   onExploreClick?: () => void;
 }
@@ -27,11 +26,10 @@ const HeroSection = ({
   title = "Full Stack Developer",
   description = "Passionate about creating beautiful and functional web applications. Specialized in React, TypeScript, and modern web technologies.",
   imageUrl = profileImageUrl,
-  cvUrl = "/resume.pdf",
+  cvUrl = "/pranav_resume.pdf",
   socialLinks = {
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    linkedin: "https://linkedin.com/in/pranavjana",
   },
   onExploreClick = () => {},
 }: HeroSectionProps) => {
@@ -160,23 +158,6 @@ const HeroSection = ({
                       rel="noopener noreferrer"
                     >
                       <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </a>
-                  </Button>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    asChild
-                    className="rounded-full w-8 h-8 sm:w-10 sm:h-10"
-                  >
-                    <a
-                      href={socialLinks.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
                     </a>
                   </Button>
                 </motion.div>
