@@ -32,6 +32,17 @@ const getTechBadgeStyles = (tech: string) => {
     "Arduino": "bg-[#00979D]/10 text-[#00979D] border-[#00979D]/20",
     "Robotics": "bg-[#FF1E1E]/10 text-[#FF1E1E] border-[#FF1E1E]/20",
     "Sensors": "bg-[#4CAF50]/10 text-[#4CAF50] border-[#4CAF50]/20",
+    "OpenAI": "bg-[#412991]/10 text-[#412991] dark:text-[#74AA9C] border-[#412991]/20",
+    "Next.js": "bg-[#000000]/10 text-[#000000] dark:text-[#FFFFFF] border-[#000000]/50 dark:border-[#FFFFFF]/30",
+    "LangGraph": "bg-[#00A86B]/10 text-[#00A86B] border-[#00A86B]/20",
+    "PostgreSQL": "bg-[#4169E1]/10 text-[#4169E1] border-[#4169E1]/20",
+    "Supabase": "bg-[#3ECF8E]/10 text-[#3ECF8E] border-[#3ECF8E]/20",
+    "Vercel": "bg-[#000000]/10 text-[#000000] dark:text-[#FFFFFF] border-[#000000]/20",
+    "Gemini": "bg-[#4285F4]/10 text-[#4285F4] border-[#4285F4]/20",
+    "SAPUI5": "bg-[#0A6ED1]/10 text-[#0A6ED1] border-[#0A6ED1]/20",
+    "SAP BTP": "bg-[#0A6ED1]/10 text-[#0A6ED1] border-[#0A6ED1]/20",
+    "S/4HANA": "bg-[#0A6ED1]/10 text-[#0A6ED1] border-[#0A6ED1]/20",
+    "Analytics Cloud": "bg-[#0A6ED1]/10 text-[#0A6ED1] border-[#0A6ED1]/20",
   };
   
   return styles[tech] || "bg-gray-100 dark:bg-black/40 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700";
@@ -71,11 +82,11 @@ const ProjectCard = ({
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.2 }}
-      className="w-full sm:w-[340px] md:w-[360px] lg:w-[380px] bg-white dark:bg-black relative"
+      className="w-full sm:w-[340px] md:w-[360px] lg:w-[380px] bg-white dark:bg-black relative pt-4"
     >
       {isAwardWinning && (
         <div 
-          className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 z-10 animate-bounce cursor-pointer"
+          className="absolute top-2 right-2 sm:top-2 sm:right-2 z-10 animate-bounce cursor-pointer"
           onClick={triggerConfetti}
         >
           <span className="text-2xl sm:text-3xl" role="img" aria-label="award">🏆</span>
@@ -118,12 +129,14 @@ const ProjectCard = ({
                   Code
                 </a>
               </Button>
-              <Button size="sm" asChild className="h-8 sm:h-9 text-xs sm:text-sm">
-                <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-                  Live Demo
-                </a>
-              </Button>
+              {liveUrl !== "#" && (
+                <Button size="sm" asChild className="h-8 sm:h-9 text-xs sm:text-sm">
+                  <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                    Live Demo
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
         </CardContent>

@@ -47,12 +47,22 @@ export default function ChatBot() {
       // Get bot response
       const response = await sendMessage(userMessage);
       setMessages(prev => [...prev, { content: response, isBot: true }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error getting response:", error);
-      setMessages(prev => [
-        ...prev,
-        { content: "Sorry, I encountered an error. Please try again.", isBot: true }
-      ]);
+      
+      // Check if it's a rate limit error (503 overload)
+      const errorMessage = error?.message || error?.toString() || "";
+      if (errorMessage.includes("503") || errorMessage.includes("overloaded")) {
+        setMessages(prev => [
+          ...prev,
+          { content: "Gemini is rate limiting us... Try again soon! 😅", isBot: true }
+        ]);
+      } else {
+        setMessages(prev => [
+          ...prev,
+          { content: "Sorry, I encountered an error. Please try again.", isBot: true }
+        ]);
+      }
     } finally {
       setIsLoading(false);
     }

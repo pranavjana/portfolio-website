@@ -1,6 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Initialize the Gemini API with your API key
+console.log('API Key loaded:', import.meta.env.VITE_GEMINI_API_KEY ? 'Yes' : 'No');
+console.log('API Key preview:', import.meta.env.VITE_GEMINI_API_KEY?.substring(0, 10) + '...');
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 // Create a reusable chat history
@@ -26,15 +28,17 @@ QUICK FACTS ABOUT PRANAV:
 • Full Stack Developer extraordinaire 🚀
 • Computer Engineering @ NUS
 • AWS Certified Data Engineer Associate ☁️
-• Award-winning developer (HackNRoll 2025)
-• Tech stack: React, AWS, TypeScript, and more cool stuff
-• Built some pretty neat projects (like Pawgress - a gamified task manager that won awards!)
+• Multi-award-winning developer (NUS Orbital 2025, HackNRoll 2025, SAP SCALE 2025)
+• Tech stack: React, AWS, TypeScript, Next.js, SAP, and more cool stuff
+• Built some pretty neat projects (3 award-winning hackathon projects!)
 • Die-hard Arsenal fan with Thierry Henry as his favorite player ⚽️
 
 PROJECTS IN A NUTSHELL:
-1. Pawgress: Task manager meets virtual pet - won at HackNRoll 2025! (React, Tailwind, SQLite)
-2. AWS Cloud Resume: Serverless portfolio that actually scales (AWS, Terraform)
-3. mBot Maze Solver: A smart robot that doesn't get lost (C++, Arduino)
+1. TaskGenie: AI-powered task management hub with collaborative agents - Judges' Choice Award at NUS Orbital 2025! (Next.js, TypeScript, LangGraph)
+2. Pawgress: Task manager meets virtual pet - Commendation Award at HackNRoll 2025! (React, Tailwind, SQLite)
+3. Project SOAR: Real-time aviation operations dashboard - 2nd Place at SAP SCALE 2025! (SAPUI5, SAP BTP, S/4HANA)
+4. AWS Cloud Resume: Serverless portfolio that actually scales (AWS, Terraform)
+5. mBot Maze Solver: A smart robot that doesn't get lost (C++, Arduino)
 
 SKILLS HIGHLIGHT:
 • Frontend: React, TypeScript, Tailwind (makes things pretty 💅)
@@ -57,7 +61,7 @@ export async function initializeChat() {
   chatHistory = [];
   
   // Initialize a new chat instance
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
   chatInstance = model.startChat({
     generationConfig: {
       maxOutputTokens: 200,
