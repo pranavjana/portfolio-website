@@ -1,7 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-// Dynamic import to avoid build issues
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Simple in-memory rate limiting (resets on each deployment)
 const rateLimit = new Map<string, { count: number; resetTime: number }>();
@@ -41,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Get client IP for rate limiting
-  const clientIp = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+  const clientIp = req.headers['x-forwarded-for'] || 'unknown';
   const ipKey = String(clientIp);
   
   // Check rate limit
