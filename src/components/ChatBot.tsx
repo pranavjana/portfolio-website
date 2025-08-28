@@ -50,12 +50,18 @@ export default function ChatBot() {
     } catch (error: any) {
       console.error("Error getting response:", error);
       
-      // Check if it's a rate limit error (503 overload)
       const errorMessage = error?.message || error?.toString() || "";
-      if (errorMessage.includes("503") || errorMessage.includes("overloaded")) {
+      
+      // Check for different error types
+      if (errorMessage.includes("Rate limited")) {
         setMessages(prev => [
           ...prev,
-          { content: "Gemini is rate limiting us... Try again soon! 😅", isBot: true }
+          { content: "You've reached the chat limit for now. Please try again in an hour! ⏳", isBot: true }
+        ]);
+      } else if (errorMessage.includes("503") || errorMessage.includes("overloaded")) {
+        setMessages(prev => [
+          ...prev,
+          { content: "Gemini is taking a break... Try again in a moment! 😅", isBot: true }
         ]);
       } else {
         setMessages(prev => [
